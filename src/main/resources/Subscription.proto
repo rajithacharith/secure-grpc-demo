@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package com.wso2.identity.asgardeo.subscription;
+
+message DailyUsageRequest {
+  string tenantDomain = 1;
+  sint64 usage = 2;
+}
+
+message DailyUsageResponse {
+  string response = 1;
+}
+
+service SubscriptionService {
+  rpc updateDailyUsage (DailyUsageRequest) returns (DailyUsageResponse);
+}
