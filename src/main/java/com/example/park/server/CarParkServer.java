@@ -23,7 +23,7 @@ public class CarParkServer {
     public static void main(String[] args) throws IOException, InterruptedException,
             UnrecoverableKeyException, NoSuchAlgorithmException, KeyStoreException {
 
-        TlsServerCredentials.ClientAuth clientAuth = TlsServerCredentials.ClientAuth.NONE;
+        TlsServerCredentials.ClientAuth clientAuth = TlsServerCredentials.ClientAuth.REQUIRE;
         TlsServerCredentials.Builder tlsBuilder = TlsServerCredentials.newBuilder()
                 .keyManager(Utils.getKeyManagers("<path-to-keystore>/carparkserver-keystore.jks",
                         "<keystore-password>".toCharArray(),
